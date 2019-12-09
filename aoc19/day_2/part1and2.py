@@ -13,7 +13,7 @@ def intCodeCompute(data):
     return data
 
 
-print(intCodeCompute(data[:]))
+print(f"Answer to part 1: {intCodeCompute(data[:])[0]}")
 
 
 ### Part 2
@@ -24,5 +24,5 @@ for noun in range(100):
         data2[2] = verb
         data2 = intCodeCompute(data2)
         if data2[0] == 19690720:
-            print(f"Answer is {100*noun + verb}")
+            print(f"Answer to part 2: {100*noun + verb}")
             break
