@@ -5,23 +5,24 @@ curr = defaultdict(lambda: 0)
 total = 0
 length = 0
 for x in xs:
+    line = []
     if x == "":
         for i in curr.keys():
             if curr[i] == length:
-                total += curr[i]
-        curr = defaultdict(lambda x: x)
+                total += 1
+        curr = defaultdict(lambda: 0)
+        length = 0
     else:
+        length += 1
         for i in x:
-            length += 1
-            print(curr)
-            print(f"i {i}")
             # Bad naming practice >:(
             for y in i:
-                curr[y] += 1
-                if curr !== {}:
-                    print("No")
+               curr[y] += 1
 
-total += len(curr)
-# 6768
+for i in curr.keys():
+    if curr[i] == length:
+        total += 1
+
+# 3489
 print(total)
 
